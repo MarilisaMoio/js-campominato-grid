@@ -74,7 +74,12 @@ main{
 }
 
 .square{
-    border: 2px solid var(--main-dark);
+    box-shadow: 
+        2px 0 0 0 var(--main-dark), 
+        0 2px 0 0 var(--main-dark), 
+        2px 2px 0 0 var(--main-dark),   /* Just to fix the corner */
+        2px 0 0 0 var(--main-dark) inset, 
+        0 2px 0 0 var(--main-dark) inset;
     aspect-ratio: 1;
     display: flex;
     align-items: center;
