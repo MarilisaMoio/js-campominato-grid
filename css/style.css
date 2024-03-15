@@ -69,6 +69,9 @@ main{
         border: 1px dotted red;
         width: 400px;
         aspect-ratio: 1;
+        display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
     }
 }
 
@@ -78,6 +81,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     &.easy{
         width: calc(100% / 10);
     }
