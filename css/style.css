@@ -10,3 +10,48 @@ ul, ol {
     list-style: none;
 }
 /* #endregion RESET */
+
+/* #region GENERAL */
+:root{
+    --main-dark: #001633;
+    --secondary: #00E164;
+    --header-h: 70px;
+    --footer-h: 40px;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--main-dark);
+}
+/* #endregion GENERAL */
+
+/* #region HEADER */
+header{
+    border: 1px dotted red;
+    padding: 10px;
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    & img{
+        height: 100%;
+    }
+    & h1{
+        display: inline-block;
+        margin-left: 0.5rem;
+    }
+    & .choice{
+        text-align: end;
+        flex-grow: 1;
+    }
+}
+
+#start-btn{
+    padding: 3px 10px;
+    border-radius: 10px;
+    background-color: #00E164;
+    cursor: pointer;
+    &:hover{
+        background-color:color-mix(in srgb, var(--secondary) 70%, black 30%);
+    }
+}
+/* #endregion HEADER */
