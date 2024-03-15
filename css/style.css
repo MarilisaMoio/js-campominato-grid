@@ -93,3 +93,9 @@ main{
     background-color: var(--activated);
 }
 /* #endregion MAIN */
+
+/* #region FOOTER */
+footer{
+    padding: 6px;
+}
+/* #endregion FOOTER */
