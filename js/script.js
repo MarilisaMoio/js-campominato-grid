@@ -17,14 +17,32 @@
         //aggiungi la classe activated
         //logga il numero cliccato
 
+const btn = document.querySelector("#start-btn");
 const squareContainer = document.querySelector(".container");
-let number = 30;
-let choice = "easy"
 
-for (let i = 1; i <= number; i++){
-    const newSquare = createDiv(i, choice);
-    squareContainer.append(newSquare);
-}
+btn.addEventListener("click", function(){
+    //reset per iniziare una nuova griglia
+    squareContainer.innerHTML = ""
+
+    //recupero scelte utente e conversione in numero
+    let choice = document.querySelector("#difficulty").value;
+    
+    let numSquares;
+    if (choice === "easy"){
+        numSquares = 100;
+    } else if (choice === "medium") {
+        numSquares = 81;
+    } else if (choice === "hard") {
+        numSquares = 49;
+    }
+
+    //creazione dei div coerenti con i valori precedenti
+    for (let i = 1; i <= numSquares; i++){
+        const newSquare = createDiv(i, choice);
+        squareContainer.append(newSquare);
+    }
+})
+
 
 // FUNCTIONS
 //funzione per generare un div, contentente un numero e una serie di classi, al quale poi viene agganciato un event listener che al click gli altribuisce una classe aggiuntiva e stampa in console il numero contenuto
@@ -41,6 +59,7 @@ function createDiv(number, choice){
     newDiv.addEventListener("click", function(){
         this.classList.toggle("activated");
 
+        //per evitare che anche al toggle per deselezionarlo vada in console.log il valore
         if (this.classList.contains("activated")){
             console.log(this.children[0].innerHTML)
         }
