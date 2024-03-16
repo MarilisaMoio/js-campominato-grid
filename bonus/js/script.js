@@ -61,7 +61,7 @@ function createDiv(number, choice){
 
         //per evitare che anche al toggle per deselezionarlo vada in console.log il valore
         if (this.classList.contains("activated")){
-            console.log(this.children[0].innerHTML)
+            console.log(number)
         }
     })
 
